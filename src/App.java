@@ -8,8 +8,6 @@ public class App {
      * 
      * There are situations where I could have used getters/setters,
      * but I chose not to for readability.
-     * 
-     * I plan to add buttons for play & replay as well as other settings.
      */
   }
 }

@@ -8,9 +8,9 @@ import javax.swing.JPanel;
 
 public class Map extends JPanel {
   
-  static final int WIDTH = 700;
-  static final int HEIGHT = 700;
-  static final int GRID_UNIT = 20;
+  static final int WIDTH = 600;
+  static final int HEIGHT = 600;
+  static final int GRID_UNIT = 25;
   static final int MAP_UNITS = (WIDTH * HEIGHT) / GRID_UNIT;
   static Font font = new Font("Aharoni", Font.PLAIN,40);
   static Color fontColor = Color.red;
@@ -18,11 +18,11 @@ public class Map extends JPanel {
   static JLabel scoreLabel = new JLabel();
   static Color wallColor = Color.black;
   static Color scoreColor = Color.red;
-
   
   Map() {
     gameOver.setFont(font);
     gameOver.setForeground(fontColor);
+    
     scoreLabel.setFont(font);
     scoreLabel.setForeground(fontColor);
     
@@ -41,7 +41,7 @@ public class Map extends JPanel {
   
   public void draw(Graphics g) {
     if(Game.running) {
-    g.setColor(Color.RED);
+    g.setColor(Food.color);
     g.fillOval(Food.xLoc, Food.yLoc, GRID_UNIT, GRID_UNIT);
     
       for(int i = 0; i < Snake.bodyLength; i++) {
