@@ -22,6 +22,7 @@ public class Snake implements KeyListener {
       if(X[0] > Map.WIDTH) {Game.running = false;}
       if(Y[0] > Map.HEIGHT) {Game.running = false;}
     }
+    Game.turn++;
   }
   
   public static void eatFood() {
@@ -30,7 +31,6 @@ public class Snake implements KeyListener {
       foodEaten++;
       Food.placeFood();
       Map.scoreLabel.setText("Score " + foodEaten);
-      
     }
   }
   
@@ -61,5 +61,16 @@ public class Snake implements KeyListener {
   }
   @Override
   public void keyReleased(KeyEvent e) {
+  }
+
+  public static void reset() {
+    direction = "East";
+    foodEaten = 0;
+    bodyLength = 5;
+    Game.score = "Score " + foodEaten;
+    for (int i = 0; i < bodyLength; i++) {
+      X[i] = -i;    
+      Y[i] = 0;    
+    }
   }
 }
