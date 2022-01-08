@@ -1,17 +1,17 @@
 import java.awt.Color;
-import java.util.Random;
 
 public class Food {
 
-  static Random r = new Random();
-  static int xLoc, yLoc, rColor;
+  static int xLocation, yLocation, rColor;
   public static Color color;
   
   public static void placeFood() {
-    xLoc = r.nextInt((int)(Map.WIDTH / Map.GRID_UNIT)) * Map.GRID_UNIT;
-    yLoc = r.nextInt((int)(Map.HEIGHT / Map.GRID_UNIT)) * Map.GRID_UNIT;
-    
-    rColor = (int) (Math.random() * 7 + 1);
+    //draws a random number inclusive 0, exclusive Map.WIDTH / GRID_UNIT, allocated by GRID_UNIT;
+    xLocation = (int) (Math.random() * (Map.WIDTH / Map.GRID_UNIT)) * Map.GRID_UNIT;
+    yLocation = (int) (Math.random() * (Map.HEIGHT / Map.GRID_UNIT)) * Map.GRID_UNIT;
+
+    // to include 1-7 a unit shift of 1 is needed.
+    rColor = (int) ((Math.random() * 7) + 1);
     
     switch (rColor) {
       case 1 -> color = Color.BLUE;
